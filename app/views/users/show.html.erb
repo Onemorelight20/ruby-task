@@ -1,10 +1,10 @@
-<div class="container">
+<div class="container pt-3">
 <h1><%= "User #{@user.username}" %></h1>
 <hr>
-<%= link_to "remove", user_path(@user), data: {
+<%= link_to "Remove", user_path(@user), data: {
   turbo_method: :delete,
   turbo_confirm: "Are you sure?"
-} %>
+}, class: "btn btn-dark mx-0" %>
 <hr>
 <h3>Repositories:</h3>
 <% @user.repositories.each do |repository| %>
@@ -13,6 +13,6 @@
   </p>
 <% end %>
 <hr>
-<%= link_to "All saved users", users_path %>
+<%= link_to "All saved users", users_path, class: "btn btn-dark mx-0" %>
 <hr>
 </div>

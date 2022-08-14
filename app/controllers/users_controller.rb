@@ -23,10 +23,12 @@ class UsersController < ApplicationController
     uname = user_params[:username]
     @user = User.new(username: uname)
 
-
     @response = @@conn.get("users/#{uname}")
     if @response.status == 200
-      if @user.save
+
+      if User.find_by_username(uname)
+        render :new
+      elsif @user.save
         save_user_repos(uname, @user)
         redirect_to root_path
       else
@@ -55,7 +57,7 @@ class UsersController < ApplicationController
     @response_repos = @@conn.get("users/#{uname}/repos")
     @repos_names = []
     (@response_repos.body).each do |repo|
-      user.repositories.create({"title" => repo["name"]})
+      user.repositories.create({ "title" => repo["name"] })
       @repos_names.append repo["name"]
     end
 

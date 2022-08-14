@@ -1,18 +1,19 @@
-<div class="container">
+<div class="container my-3">
 <h1>Add a user</h1>
 
 <%= form_with model: @user do |form| %>
   <div>
     <%= form.label :username %><br>
-    <%= form.text_field :username %>
+    <%= form.text_field :username, class: "my-2" %>
     <% @user.errors.full_messages_for(:username).each do |message| %>
       <div><%= message %></div>
     <% end %>
-    <%= @error %>
   </div>
 
+    <%= @user.error %>
+
   <div>
-    <%= form.submit %>
+    <%= form.submit "Create a user", class: "btn btn-dark mx-0" %>
   </div>
 <% end %>
 </div>
