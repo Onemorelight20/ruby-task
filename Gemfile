@@ -16,6 +16,8 @@ gem 'pg', '~> 1.1'
 
 gem 'rubocop', require: false
 
+gem 'bootstrap', '~> 5.2.0'
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
 
