@@ -1,6 +1,6 @@
 # Coding assessment
 
-Functionality: you can type in Giphub username and see all the repositories of the user
+Functionality: you can type in Github username and see all the repositories of the user
 listed. Also there is an option to see recently added usernames as well as delete them.
 
 * Ruby version 3.1.2p20, RoR version 7.0.3.1
