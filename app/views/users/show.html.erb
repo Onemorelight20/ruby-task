@@ -1,0 +1,18 @@
+<div class="container">
+<h1><%= "User #{@user.username}" %></h1>
+<hr>
+<%= link_to "remove", user_path(@user), data: {
+  turbo_method: :delete,
+  turbo_confirm: "Are you sure?"
+} %>
+<hr>
+<h3>Repositories:</h3>
+<% @user.repositories.each do |repository| %>
+  <p>
+    <%= repository.title %>
+  </p>
+<% end %>
+<hr>
+<%= link_to "All saved users", users_path %>
+<hr>
+</div>
