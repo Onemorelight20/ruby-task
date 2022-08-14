@@ -1,24 +1,14 @@
-# README
+# Coding assessment
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Functionality: you can type in Giphub username and see all the repositories of the user
+listed. Also there is an option to see recently added usernames as well as delete them.
 
-Things you may want to cover:
+* Ruby version 3.1.2p20, RoR version 7.0.3.1
 
-* Ruby version
+* PostgreSQL was used as a database
 
-* System dependencies
+* Code was checked and slightly improved using Rubocop 
 
-* Configuration
+* To make frontend part look better Bootstrap was used
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Deployed on Heroku: https://quiet-wave-37641.herokuapp.com/
