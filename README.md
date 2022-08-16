@@ -12,3 +12,10 @@ listed. Also there is an option to see recently added usernames as well as delet
 * To make frontend part look better Bootstrap was used
 
 * Deployed on Heroku: https://quiet-wave-37641.herokuapp.com/
+
+* #### Connected GraphQL to Development run of the project:
+
+![Getting info about user having the id](storage/img/img1.png)
+![Getting info about all users](storage/img/img2.png)
+![Mutation for adding a new user](storage/img/img3.png)
+

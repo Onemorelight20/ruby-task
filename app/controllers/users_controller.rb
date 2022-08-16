@@ -1,13 +1,7 @@
-# frozen_string_literal: true
-class UsersController < ApplicationController
-  @@conn = Faraday.new(
-    url: 'https://api.github.com',
-    params: { param: '1' },
-    headers: { 'Content-Type' => 'application/json' }
-  ) do |f|
-    f.response :json
-  end
+require 'helpers/github_helper'
 
+class UsersController < ApplicationController
+  include GitHubHelper
   def index
     @users = User.all
   end
@@ -24,7 +18,7 @@ class UsersController < ApplicationController
     uname = user_params[:username]
     @user = User.new(username: uname)
 
-    @response = @@conn.get("users/#{uname}")
+    @response = users_get_request(uname)
     if @response.status == 200
 
       if User.find_by_username(uname)
@@ -54,13 +48,5 @@ class UsersController < ApplicationController
     params.require(:user).permit(:username)
   end
 
-  def save_user_repos(uname, user)
-    @response_repos = @@conn.get("users/#{uname}/repos")
-    @repos_names = []
-    @response_repos.body.each do |repo|
-      user.repositories.create({ 'title' => repo['name'] })
-      @repos_names.append repo['name']
-    end
 
-  end
 end

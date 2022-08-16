@@ -241,7 +241,7 @@ DEPENDENCIES
   debug
   faraday
   graphiql-rails
-  graphql (~> 2.0)
+  graphql (~> 2.0.13)
   importmap-rails
   jbuilder
   pg (~> 1.1)
