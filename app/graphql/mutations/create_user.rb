@@ -13,7 +13,7 @@ class Mutations::CreateUser < Mutations::BaseMutation
 
     response = users_get_request(username)
 
-    if User.find_by_username(username)
+    if User.where('lower(username) = ?', username.downcase)
       { user: nil, errors: 'User is already saved'}
     elsif response.status == 200 and user.save
       save_user_repos(username, user)

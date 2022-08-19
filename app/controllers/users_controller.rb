@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     @response = users_get_request(uname)
     if @response.status == 200
 
-      if User.find_by_username(uname)
+      if User.where('lower(username) = ?', uname.downcase)
         render :new
       elsif @user.save
         save_user_repos(uname, @user)
